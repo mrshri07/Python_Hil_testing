@@ -1,5 +1,5 @@
 pytest
 python-can
 pyserial
-numpy
-pandas
+chardet
+time
