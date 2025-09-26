@@ -2,6 +2,8 @@
 #4 success
 #5
 #code
+#ctest 5
+
 '''import serial
 import time
 
