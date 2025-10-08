@@ -1,98 +1,4 @@
-## -*- coding: utf-8 -*-
-#4 success
-#5
-#code
-#ctest 5
-# added the new branch in the reqirements files
 
-import serial
-import time
-
-# Initialize the serial connection (adjust parameters as needed)
-ser = serial.Serial(
-    port='COM13',       # Replace with your UART port (e.g., /dev/ttyUSB0 on Linux)
-    baudrate=115200,     # Set the baudrate to match your Simulink configuration
-    timeout=1          # Timeout in seconds
-)
-
-# Function to send integer data to the UART
-def send_integer_data(data):
-    if isinstance(data, int):
-        ser.write(data.to_bytes(4, byteorder='little', signed=True))  # Convert integer to bytes and write to UART
-    else:
-        raise ValueError("Data must be an integer")
-
-try:
-    integer_data = 101 # Example integer data to be sent
-
-    if integer_data < 0:
-        send_integer_data(integer_data)
-        print(f"Sent negative integer: {integer_data}")
-    elif integer_data ==0:
-        send_integer_data(integer_data)
-        print(f"Sent zero: {integer_data}")
-    elif integer_data > 0:
-        send_integer_data(integer_data)
-        print(f"Sent positive integer: {integer_data}")
-    else:
-        print("No valid integer data to send.")
-
-except KeyboardInterrupt:
-    print("Terminating the program...")
-
-finally:
-    ser.close()  # Close the serial connection
-'''
-
-
-	
-	
-	
-	
-	
-
-
-
-
-
-'''
-import serial
-import time
-
-# Initialize the serial connection (adjust parameters as needed)
-ser = serial.Serial(
-    port='COM13',       # Replace with your UART port (e.g., /dev/ttyUSB0 on Linux)
-    baudrate=115200,     # Set the baudrate to match your Simulink configuration
-    timeout=1          # Timeout in seconds
-)
-
-# Function to send integer data to the UART
-def send_integer_data(data):
-    if isinstance(data, int):
-        ser.write(data.to_bytes(4, byteorder='little', signed=True))  # Convert integer to bytes and write to UART
-    else:
-        raise ValueError("Data must be an integer")
-
-try:
-    integer_data = 101  # Example integer data to be sent
-
-    if integer_data == 1:
-        send_integer_data(integer_data)
-        print("Sent positive response.")
-   
-    else:
-        send_integer_data(integer_data)
-        print("Sent other response.")
-
-except KeyboardInterrupt:
-    print("Terminating the program...")
-
-finally:
-    ser.close()  # Close the serial connection
-	
-
-	
-	
 	
 
 
@@ -234,7 +140,6 @@ if __name__ == "__main__":
     finally:
         hil.disconnect()
 
-'''
 '''
 import time
 import serial  # For COM port communication
